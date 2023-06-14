@@ -1,0 +1,53 @@
+<h1 style="margin-bottom: 20px;">Welcome To Lyrique</h1>
+<div class="container">
+    <form action="#">
+        <span class="p-float-label">
+            <input id="float-input" type="text" size="30" pInputText>
+            <label for="float-input">FirstName</label>
+        </span>
+
+        <span class="p-float-label">
+            <input id="float-input" type="text" size="30" pInputText>
+            <label for="float-input">
+                LastName
+            </label>
+        </span>
+
+        <!--         
+        <label for="">Gender:</label>
+        <p-radioButton name="gender"  value="male" inputId="male"></p-radioButton>
+       
+        <label for="male" class="ml-2">Male</label> -->
+
+        <p-calendar class="mt-5" name="dob" size="30" placeholder="DOB" float-input [(ngModel)]="date"></p-calendar>
+
+
+
+
+        <span class="p-float-label">
+            <!-- <input id="float-input" type="text" size="30" pInputText>
+            <label for="float-input">
+                City
+            </label> -->
+
+            <label for="float-input">
+                LastName
+            </label>
+            <p-cascadeSelect id="cascadeselect" name="city" [(ngModel)]="selectedCity" [options]="countries" optionLabel="cname"
+                optionGroupLabel="name" [optionGroupChildren]="['states', 'cities']" [style]="{ minWidth: '14rem' }"
+                placeholder="Select a City" ></p-cascadeSelect>
+        </span>
+
+        <span class="p-float-label">
+            
+            <p-inputMask mask="(+91) 9999999999"  placeholder="(999) 999-9999"></p-inputMask>
+        </span>
+
+
+        <p-button label="Submit" (click)="show();age()" icon="pi pi-check"></p-button>
+
+    </form>
+
+    <p-toast position="top-right" ></p-toast>
+    
+</div>
